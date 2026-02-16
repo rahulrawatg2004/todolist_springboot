@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <section class="panel form-panel">
+      <h1>Todo List</h1>
+      <p class="subtitle">Create, update, and track your tasks.</p>
+
+      <form id="task-form">
+        <input type="hidden" id="task-id">
+
+        <label for="task-name">Task name</label>
+        <input id="task-name" type="text" placeholder="Enter task name" required>
+
+        <label for="task-description">Description</label>
+        <textarea id="task-description" placeholder="Enter description" maxlength="50" required></textarea>
+
+        <label for="task-status">Status</label>
+        <select id="task-status" required>
+          <option value="NOT_DONE">NOT_DONE</option>
+          <option value="ONGOING">ONGOING</option>
+          <option value="DONE">DONE</option>
+        </select>
+
+        <div class="form-actions">
+          <button id="save-btn" type="submit">Add Task</button>
+          <button id="cancel-btn" type="button" class="secondary hidden">Cancel Edit</button>
+        </div>
+      </form>
+      <p id="form-message" class="message"></p>
+    </section>
+
+    <section class="panel list-panel">
+      <div class="list-header">
+        <h2>Tasks</h2>
+        <button id="refresh-btn" type="button" class="secondary">Refresh</button>
+      </div>
+      <p id="list-message" class="message"></p>
+      <div id="task-list" class="task-list"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
